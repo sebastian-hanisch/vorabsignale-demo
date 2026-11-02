@@ -1,7 +1,6 @@
 # Signale und Konventionen: ändert Reden, was sich durchsetzt? – Streamlit-Demo
 
-<!-- TODO nach dem Deploy: direkt hierher den Live-Link setzen (Leerzeile davor und danach):
-**[→ Demo live ausprobieren](https://sebastianhanisch-vorabsignale-demo.streamlit.app/)** -->
+**[→ Demo live ausprobieren](https://sebastianhanisch-vorabsignale-demo.streamlit.app/)**
 
 Siebtes Stück der Reihe **Koordinationsspiele** in der „Konzepte“-Reihe für die Website „Sebastian Hanisch – Operations Research und Machine Learning“. Vehikel: **zwei Betriebe, die gleichzeitig ein Format wählen** (A: neu, am Hub bündeln; B: alt, direkt fahren), nachdem sie sich eine **kostenlose, unverbindliche Nachricht** schicken durften (Cheap Talk). Auszahlung ist Zeitersparnis je Sendung in willkürlichen Einheiten (Skala 0 bis 9). Gespielt werden reine Koordination, Hirschjagd (Hirsch gegen Hirsch 9, Hirsch allein 0, Hase 7, mit einstellbarer Verlockung t) und Kampf der Geschlechter; dazu das Lewis-Signalspiel, in dem eine Sprache erst aus dem Lernen entsteht.
 
@@ -237,4 +236,4 @@ Gebaut mit Streamlit, Plotly, NumPy und fpdf2.
 
 ---
 
-Diese Demo ist Teil des Portfolios von [Sebastian Hanisch](https://sebastianhanisch.net) – Operations Research und Machine Learning ([Über mich](https://sebastianhanisch.net/ueber-mich.html)). Mehr zu den Demos: [Interaktive Demos](https://sebastianhanisch.net/demos.html).
+Diese Demo ist Teil des Portfolios von [Sebastian Hanisch](https://sebastianhanisch.net) – Operations Research und Machine Learning ([Über mich](https://sebastianhanisch.net/ueber-mich.html)). Mehr zur Reihe: [Koordinationsspiele: von Gleichwahl bis Kaskade](https://sebastianhanisch.net/konzepte-koordinationsspiele.html).
