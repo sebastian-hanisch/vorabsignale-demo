@@ -584,7 +584,7 @@ def verdict_e4(meas: dict) -> tuple[str, str]:
     spread = max(abs(c["p1"]["mean"] + c["p2"]["mean"] - 3.0) for c in sums)
     gain = sum(1 for s in C.STARTS for tk, k in C.E3_TALKS[2:4]
                if differs(XP.find_cell(meas, family="bos", talk=tk, K=k, start=s), XP.find_cell(meas, family="bos", talk=G.TALK_NONE, K=0, start=s), "p1") == 1)
-    return "success", (f"Die Zeile gewinnt, wenn sie spricht: Auszahlung der Zeile höher als ohne Reden in {gain} von 4 Zellen (einseitig K = 2 und 3 × zwei Starts). {' | '.join(out)}. "
+    return "success", (f"Die Zeile verbessert sich, wenn sie spricht: Auszahlung der Zeile höher als ohne Reden in {gain} von 4 Zellen (einseitig K = 2 und 3 × zwei Starts); vor der Spalte liegt sie bei K = 3 und bei K = 2 nur im zufälligen Start. {' | '.join(out)}. "
                        f"Die Summe beider Auszahlungen weicht in allen {len(sums)} Zellen höchstens {de(spread, 3)} von 3 ab; die Kontrolle K = 1 gleicht dem Spiel ohne Reden.")
 
 
@@ -595,7 +595,7 @@ def verdict_random(meas: dict) -> tuple[str, str]:
     low = sum(1 for x in aa if x[5] <= 0.03)
     mis = [rand_cell(meas, G.GAME_HIRSCH, 0.0, tk, k, 6.0)["mis"]["mean"] for tk, k in C.E3_TALKS]
     eff = [rand_cell(meas, G.GAME_COORD, 0.0, tk, k, 6.0)["eff"]["mean"] for tk, k in C.E3_TALKS]
-    return "info", (f"Reden löst die Hirschjagd bei zufälligem Start nicht: (A, A) liegt in {low} von {len(aa)} Zellen (Hirschjagd mit t = 0 und t = 1 × fünf Arten des Redens × zwei Schärfen) bei höchstens 3 %, "
+    return "info", (f"Reden löst die Hirschjagd (Hase-Auszahlung 7, Schwelle p* = 0,778) bei zufälligem Start nicht: (A, A) liegt in {low} von {len(aa)} Zellen (Hirschjagd mit t = 0 und t = 1 × fünf Arten des Redens × zwei Schärfen) bei höchstens 3 %, "
                     f"der größte Wert ist {pct(worst[5], 1)} ({talk_label(worst[2], worst[3])}, β = {de(worst[4], 0)}). Bei β = 6 wächst die Fehlkoordination in der Hirschjagd mit der Zahl der Strategien: kein Reden / K = 1 / einseitig K = 2 / "
                     f"einseitig K = 3 / beidseitig K = 2 {' / '.join(pct(x, 1) for x in mis)}; in der reinen Koordination sinkt die Effizienz entsprechend {' / '.join(de(x, 3) for x in eff)}. "
                     f"Der Vergleich bei gleichem β benachteiligt das Spiel mit Reden, weil es mehr gleichwertige Strategien hat.")
